@@ -1,13 +1,14 @@
 #include<stdio.h>
+#include<math.h>
 
 int main()
 {
 	int i,j,k;
-	float x1 = 0,y1 = 0,bu = 0,bd = 0,b = 0,a = 0;
+	float x1 = 0,y1 = 0,bu = 0,bd = 0,b = 0,a = 0,rd = 0,rd1 = 0,r = 0;
 	
-	printf("璇疯緭鍏ヤ竴涓暣鏁帮紝琛ㄧず鏈夊灏戠粍鏁版嵁锛坸i锛寉i锛塡n");
+	printf("请输入一个整数，表示有多少组数据（xi，yi）\n");
 	scanf("%d",&i);
-	printf("姣忚杈撳叆涓�缁剎涓巠锛岀┖鏍奸殧寮�\n");
+	printf("每行输入一组x与y，空格隔开\n");
 	float x[i],y[i];
 	
 	for(j = 0;j < i;j++)
@@ -24,12 +25,15 @@ int main()
 	{
 		bu += (x[j] - x1) * (y[j] - y1);
 		bd += (x[j] - x1) * (x[j] - x1);
+		rd1 += (y[j] - y1) * (y[j] - y1);
 	}
 	
+	rd = sqrt(bd) * sqrt(rd1);
+	r = bu / rd;
 	b = bu / bd;
 	a = y1 - b * x1;
 	
-	printf("b=%f,a=%f",b,a);
+	printf("r=%f,b=%f,a=%f",r,b,a);
 	
 	return 0;
 }
