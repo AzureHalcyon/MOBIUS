@@ -76,7 +76,7 @@ void solveProblem(int choice) {
 			float num1, num2;
 			char op;
 			printf("请输入两个数字和运算符（例如：1 + 1）：");
-			scanf("%f %f %c", &num1, &op, &num2 );
+			scanf("%f %c %f", &num1, &op, &num2 );
 			calculate(num1, op, num2 );
 		}
 		break;
@@ -94,12 +94,13 @@ void solveProblem(int choice) {
 			mood(userDay);
 		}
 		break;
-		case 6:
+		case 6: {
 			float num1, num2;
 			printf("请输入两个数，用空格分隔：");
 			scanf("%f %f", &num1, &num2);
 			compareIntegers(num1, num2);
-			break;
+		}
+		break;
 		default:
 			printf("无效的选择！\n");
 	}
